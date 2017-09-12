@@ -1,0 +1,43 @@
+#energy-view {
+    color: chartreuse;
+    font-family: Impact;
+    font-size: 25px;
+    margin-top: 5px;
+    float:left;
+    text-shadow: 2px 2px 2px black;
+}
+
+#energy {
+    float: left;
+    border: 3px solid gray;
+    width: 60px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 7px;
+}
+
+#exit-button {
+    float: right;
+    background-color: crimson;
+    width: 30px;
+    height: 30px;
+    box-shadow: 3px 3px 3px black;
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+#child {
+    margin-top: 7px;
+}
+
+#poza-animal {
+    width: 300px;
+    height: 300px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    align: center;
+    margin-top: 300px;
+    }
