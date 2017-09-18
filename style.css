@@ -43,3 +43,10 @@
     float: left;
     margin-left: 25%;
     }
+
+#nume-animal span {
+    border: 1px solid black;
+    display: inline-block;
+    color: #fff;
+    padding: 5px 10px;
+}
