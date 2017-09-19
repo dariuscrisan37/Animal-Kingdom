@@ -1,15 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "animals";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include "db-connect.php";
 
 $sql = "SELECT * FROM animals";
 $result = $conn->query($sql);
@@ -17,7 +8,9 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - animals " . $row["animals"]. " " . $row["word"]. "<br>";
+        $id = $row["id"];
+        echo "id: " . $id .  " - animals " . $row["word"]. "<br>";
+        echo "<img src='get-image.php?id=$id'>";
     }
 
 } else {
