@@ -1,3 +1,10 @@
+<?php include 'db-connect.php' ?>
+<?php include 'random.php'?>
+<?php
+while($array = mysqli_fetch_array($result)) {
+print_r($array);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +18,17 @@
 <div id="exit-button">
     <div id="child">X</div>
 </div>
-<div id="poza-animal"></div>
-<div id="nume-animal" >Caine</div>
+<div id="poza-animal" >
+    <?php
+    echo "<img src=\"get-image.php?id='$random'\">"
+
+
+?>
+</div>
+<div id="nume-animal" ><?php
+    echo $nume;
+    ?>
+</div>
 <div id="litere"></div>
 <div id="hint"></div>
 </body>
