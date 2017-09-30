@@ -19,6 +19,7 @@ print_r($array);
     <div id="child">X</div>
 </div>
 <div id="poza-animal" >
+<!--image from database-->
     <?php
     echo "<img src=\"get-image.php?id='$random'\">"
 
