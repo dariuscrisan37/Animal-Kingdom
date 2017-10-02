@@ -48,5 +48,40 @@
     border: 1px solid black;
     display: inline-block;
     color: #fff;
-    padding: 5px 10px;
+    padding: 6px 12px;
+}
+
+.litere{
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    margin: 3px;
+    color: white;
+    background-color:gray;
+    cursor: hand;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: black 2px solid;
+}
+
+.litere:hover{
+    background-color: navy;
+}
+
+.litUsed {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    margin: 3px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: white 2px solid;
 }

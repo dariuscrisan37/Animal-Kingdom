@@ -30,7 +30,10 @@ print_r($array);
     echo $nume;
     ?>
 </div>
-<div id="litere"></div>
+<div id="panouLitere">
+    <div id="litere"></div>
+    <div id="used"></div>
+</div>
 <div id="hint"></div>
 </body>
 <script src="game.js" type="text/javascript"></script>
