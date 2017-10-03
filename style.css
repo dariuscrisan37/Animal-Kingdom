@@ -1,5 +1,9 @@
+body {
+    background-color: #B5C68E;
+}
+
 #energy-view {
-    color: chartreuse;
+    color: olivedrab;
     font-family: Impact;
     font-size: 25px;
     margin-top: 5px;
@@ -9,6 +13,7 @@
 }
 
 #energy {
+    background-color: white;
     float: left;
     border: 3px solid gray;
     width: 60px;
@@ -35,13 +40,17 @@
 }
 
 #poza-animal {
+    position: absolute;
+    background-color: white;
     width: 300px;
     height: 300px;
-    border: 1px solid gray;
+    border: 2px solid gray;
     border-radius: 10px;
-    margin-top: 60px;
+    margin: 60px 50px 30px 50px;
     float: left;
-    margin-left: 25%;
+    position: relative;
+    box-shadow: 2px 2px 5px black;
+    align-self: center;
     }
 
 #nume-animal span {
@@ -52,36 +61,56 @@
 }
 
 .litere{
+    font-family:"Arial Black";
+    font-weight: bold;
     display: inline-block;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     width: 30px;
     height: 30px;
     padding: 2px;
     margin: 3px;
     color: white;
-    background-color:gray;
+    background-color: olivedrab;
     cursor: hand;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     border: black 2px solid;
+    box-shadow: 2px 2px 3px gray;
+    position: relative;
+}
+
+#panouLitere {
+    align: center;
+    margin: 80px 50px 50px 50px;
+    max-width: 450px;
+    float: left;
+
+}
+#used {
+    margin-top: 30px;
 }
 
 .litere:hover{
-    background-color: navy;
+    background-color: darkcyan;
 }
 
 .litUsed {
+    font-family:"Arial Black";
+    font-weight: bold;
+    background-color: coral;
+    color: brown;
     display: inline-block;
     text-align: center;
-    font-size: 14px;
-    width: 24px;
-    height: 24px;
+    font-size: 24px;
+    width: 34px;
+    height: 34px;
     padding: 2px;
     margin: 3px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    border: white 2px solid;
+    border: solid 2px black;
+    box-shadow: 2px 2px 3px gray;
 }
