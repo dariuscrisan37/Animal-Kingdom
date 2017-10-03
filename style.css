@@ -54,10 +54,22 @@ body {
     }
 
 #nume-animal span {
-    border: 1px solid black;
+    font-family:"Arial Black";
+    font-weight: bold;
+    background-color: white;
+    color: white;
     display: inline-block;
-    color: #fff;
-    padding: 6px 12px;
+    text-align: center;
+    font-size: 24px;
+    width: 34px;
+    height: 34px;
+    padding: 2px;
+    margin: 3px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: solid 2px black;
+    box-shadow: 2px 2px 3px gray;
 }
 
 .litere{
@@ -113,4 +125,8 @@ body {
     border-radius: 5px;
     border: solid 2px black;
     box-shadow: 2px 2px 3px gray;
+}
+
+.coloredText {
+    vizibility:hidden;
 }
