@@ -41,7 +41,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'animals');
     extract($row);
     $id = $row["id"];
     ?>
-    <div class="col-xs-3">
+    <div class="col-xs-3 text-center">
         <p class="page-header"><?php echo $id."&nbsp;/&nbsp;". $row["word"]; ?></p>
         <img src='get-image.php?id=<?php echo $id ?>' class="img-rounded" width="250px" height="250px" />
         <p class="page-header">
