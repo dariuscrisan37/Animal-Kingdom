@@ -8,14 +8,14 @@ if(isset($_POST['btnsave'])){
     $imgName = $_FILES['poza']['name'];
     $imgFile = addslashes(file_get_contents($_FILES["poza"]["tmp_name"]));
     $imgSize = $_FILES['poza']['size'];
-
+    $nume=strtoupper($nume);
     if(empty($nume)){
         // Verifing the name filed
-        $msg = "Va rog adaugati numele animalului";
+        $errMSG = "Va rog adaugati numele animalului";
     }
         // Verifing the file field
     else if(empty($imgName)){
-        $msg = "Va rog adaugati imaginea";
+        $errMSG = "Va rog adaugati imaginea";
     }
     else{
         if($imgName) {
@@ -34,8 +34,6 @@ if(isset($_POST['btnsave'])){
         }
 
     }
-
-
 
     // if no error occured, continue ....
     if(!isset($errMSG)) {
