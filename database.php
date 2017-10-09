@@ -7,6 +7,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'animals');
 ?>
 
 
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,12 +19,12 @@ $conn = mysqli_connect('localhost', 'root', '', 'animals');
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel=stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 </head>
-<body>
+<body style="background: #B5C68E">
 
 <div class="container">
 
     <div class="header">
-        <h1 class="h2">Toate imaginile. /<a class="btn btn-default" href="addnew.php">
+        <h1 class="h1">Toate animalele  <a class="btn btn-default" href="addnew.php">
                 <span class="glyphicon glyphicon-plus"></span>&nbsp; Adauga </a></h1>
 
     </div>
@@ -42,12 +43,12 @@ $conn = mysqli_connect('localhost', 'root', '', 'animals');
     $id = $row["id"];
     ?>
     <div class="col-xs-3 text-center">
-        <p class="page-header"><?php echo $id."&nbsp;/&nbsp;". $row["word"]; ?></p>
+        <p class="header h2"><?php echo $id."&nbsp;/&nbsp;". $row["word"]; ?></p>
         <img src='get-image.php?id=<?php echo $id ?>' class="img-rounded" width="250px" height="250px" />
         <p class="page-header">
 				<span>
-				<a class="btn btn-info" href="editform.php?edit_id=<?php echo $row['id']; ?>" title="click for edit" onclick="return confirm('sure to edit ?')"><span class="glyphicon glyphicon-edit"></span> Edit</a>
-				<a class="btn btn-danger" href="?delete_id=<?php echo $row['id']; ?>" title="click for delete" onclick="return confirm('sure to delete ?')"><span class="glyphicon glyphicon-remove-circle"></span> Delete</a>
+				<a class="btn btn-info" href="edit.php?edit_id=<?php echo $row['id']; ?>" title="click for edit" onclick="return confirm('Vrei sa editezi?')"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+				<a class="btn btn-danger" href="delete.php?id=<?php echo $row['id'];?>" title="click for delete" onclick="return confirm('Vrei sa stergi?')"><span class="glyphicon glyphicon-remove-circle"></span> Delete</a>
 				</span>
         </p>
     </div>
