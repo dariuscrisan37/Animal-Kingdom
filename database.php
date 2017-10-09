@@ -47,7 +47,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'animals');
         <img src='get-image.php?id=<?php echo $id ?>' class="img-rounded" width="250px" height="250px" />
         <p class="page-header">
 				<span>
-				<a class="btn btn-info" href="edit.php?edit_id=<?php echo $row['id']; ?>" title="click for edit" onclick="return confirm('Vrei sa editezi?')"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+				<a class="btn btn-info" href="edit.php?id=<?php echo $row['id']; ?>" title="click for edit" onclick="return confirm('Vrei sa editezi?')"><span class="glyphicon glyphicon-edit"></span> Edit</a>
 				<a class="btn btn-danger" href="delete.php?id=<?php echo $row['id'];?>" title="click for delete" onclick="return confirm('Vrei sa stergi?')"><span class="glyphicon glyphicon-remove-circle"></span> Delete</a>
 				</span>
         </p>
