@@ -1,33 +1,31 @@
 <?php
-error_reporting( ~E_NOTICE ); // avoid notice
+
 include "db-connect.php";
-$conn = mysqli_connect('localhost', 'root', '', 'animals');
+//$conn = mysqli_connect('localhost', 'root', '', 'animals');
 $MAX_FILE_SIZE = 5000000;
-if(isset($_POST['btnsave'])){
+if(isset($_POST['btnsave'])) {
     $nume = $_POST['nume_animal'];
     $imgName = $_FILES['poza']['name'];
     $imgFile = addslashes(file_get_contents($_FILES["poza"]["tmp_name"]));
     $imgSize = $_FILES['poza']['size'];
-    $nume=strtoupper($nume);
-    if(empty($nume)){
+    $nume = strtoupper($nume);
+    if (empty($nume)) {
         // Verifing the name filed
         $errMSG = "Va rog adaugati numele animalului";
-    }
-        // Verifing the file field
-    else if(empty($imgName)){
+    } // Verifing the file field
+    else if (empty($imgName)) {
         $errMSG = "Va rog adaugati imaginea";
-    }
-    else{
-        if($imgName) {
-            $extension = strtolower(pathinfo($imgName,PATHINFO_EXTENSION));
+    } else {
+        if ($imgName) {
+            $extension = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
             if (($extension != "jpg") && ($extension != "jpeg")
-                && ($extension != "png") && ($extension != "gif")){
-                $errMSG ="Format necunoscut, alegeti alta imagine";
-            }
-            else{
-                $size=$imgSize;
+                && ($extension != "png") && ($extension != "gif")
+            ) {
+                $errMSG = "Format necunoscut, alegeti alta imagine";
+            } else {
+                $size = $imgSize;
 
-                if($size > $MAX_FILE_SIZE){
+                if ($size > $MAX_FILE_SIZE) {
                     $errMSG = "Alegeti o imagine mai mica!";
                 }
             }
@@ -36,24 +34,18 @@ if(isset($_POST['btnsave'])){
     }
 
     // if no error occured, continue ....
-    if(!isset($errMSG)) {
-        $query = "INSERT INTO animals(word, animals) ";
-        $query .= "VALUE ('$nume', '$imgFile')";
+    $sql = "INSERT INTO animals(word, animals) VALUE ('$nume', '$imgFile')";
 
-        $result = mysqli_query($conn, $query);
-        if ($result) {
-            $successMSG = "a fost adaugat cu success...";
-            header("refresh:5, database.php"); //redirect page after 5 seconds.
-        } else {
-            $errMSG = "eroare la incarcarea imaginii.";
-        }
-
-
+    if (mysqli_query($conn, $sql)) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
-
-
 }
+mysqli_close($conn);
 ?>
+
+
 
 <!doctype html>
 <html lang="en">

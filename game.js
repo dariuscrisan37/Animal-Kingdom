@@ -35,4 +35,4 @@ function selectLitera(selected){
     lit.className = 'litUsed';
     div_used.appendChild(lit);
 }
-selectLitera(selected);
+// selectLitera(selected);
