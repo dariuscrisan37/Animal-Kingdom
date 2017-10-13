@@ -1,9 +1,10 @@
 <?php
 include "db-connect.php";
 $sql = "DELETE FROM animals WHERE id='$_GET[id]'";
-if (mysqli_query($conn, $sql)) {
+if ($conn->query($sql) === TRUE) {
     header("refresh:0 ,url=database.php");
 } else {
     echo "Error deleting image";
 }
+$conn->close();
 ?>

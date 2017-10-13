@@ -32,17 +32,18 @@ if(isset($_POST['btnsave'])) {
         }
 
     }
-
-    // if no error occured, continue ....
     $sql = "INSERT INTO animals(word, animals) VALUE ('$nume', '$imgFile')";
-
     if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+
+        header("refresh:5, database.php"); //redirect page after 5 seconds.
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo $sql;
     }
+    mysqli_close($conn);
+    // if no error occured, continue ....
+
 }
-mysqli_close($conn);
+
 ?>
 
 
