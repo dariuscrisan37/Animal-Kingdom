@@ -26,9 +26,10 @@ if(isset($_POST['btn_save_updates'])) {
     $sql = "UPDATE animals SET animals='$imgFile',word='$name' WHERE id=$id";
 
     if (mysqli_query($conn, $sql)) {
+
         header("refresh:2 ,url=database.php");
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo $errMSG = "eroare la incarcarea imaginii " . $sql . "<br>" . mysqli_error($conn);
     }
 
 }
