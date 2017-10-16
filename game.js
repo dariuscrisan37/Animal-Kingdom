@@ -2,6 +2,7 @@
 div_numeanimal = document.getElementById("nume-animal");
 div_used = document.getElementById('used');
 div_litere = document.getElementById("litere");
+var numStrikes = 0;
 var numeanimal = document.querySelector('#nume-animal').innerHTML;
 
 document.querySelector('#nume-animal').innerHTML = '';
@@ -47,6 +48,44 @@ function selectLitera(selected){
     var letter = selected.innerHTML;
     for(var i=0; i<numeanimal.length; i++){
         if (numeanimal[i] == letter) document.getElementById('letter_' + i).innerHTML = letter;
+    }
+    var lose;
+    var win;
+    var current = '';
+    var correct = false;
+    for(var i=0; i<numeanimal.length; i++){
+        if(numeanimal[i] == letter){
+            document.getElementById('letter_' + i).innerHTML = letter;
+            correct = true;
+        }
+
+        if(document.getElementById('letter_' + i).innerHTML == '') current += ' ';
+        else current += document.getElementById('letter_' +i).innerHTML;
+    }
+    if(current == numeanimal){
+        alert('Ai castigat');
+        win = true;
+    }
+    if(correct){
+        document.getElementById('sndCorrect').currentTime = 0;
+        document.getElementById('sndCorrect').play();
+        lit.style.backgroundColor = "olivedrab";
+        lit.style.color = "Yellow ";
+    }else{
+        document.getElementById('sndBad').currentTime = 0;
+        document.getElementById('sndBad').play();
+        numStrikes++;
+        if(numStrikes == 6){
+            alert('Ai pierdut. Raspunsul corect a fost: ' + numeanimal);
+            lose = true;
+        }
+    }
+    if(win){
+        document.getElementById('sndWin').currentTime = 0;
+        document.getElementById('sndWin').play();
+    }else if(lose){
+        document.getElementById('sndLose').currentTime = 0;
+        document.getElementById('sndLose').play();
     }
 }
 // selectLitera(selected);
