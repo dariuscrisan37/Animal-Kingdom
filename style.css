@@ -51,28 +51,33 @@ body {
     position: relative;
     box-shadow: 2px 2px 5px black;
     align-self: center;
-    }
-
-#nume-animal span {
+}
+.box {
     font-family:"Arial Black";
     font-weight: bold;
-    background-color: white;
-    color: white;
     display: inline-block;
     text-align: center;
-    font-size: 24px;
-    width: 34px;
-    height: 34px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
     padding: 2px;
     margin: 3px;
+    color: Black;
+    background-color: White;
+    cursor: pointer;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    border: solid 2px black;
+    border: black 2px solid;
     box-shadow: 2px 2px 3px gray;
+    position: relative;
 }
 
-.litere{
+.letter{
+
+}
+
+.btnlitere{
     font-family:"Arial Black";
     font-weight: bold;
     display: inline-block;
@@ -84,13 +89,16 @@ body {
     margin: 3px;
     color: white;
     background-color: olivedrab;
-    cursor: hand;
+    cursor: pointer;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     border: black 2px solid;
     box-shadow: 2px 2px 3px gray;
     position: relative;
+}
+.btnlitere:hover{
+    background-color: darkcyan;
 }
 
 #panouLitere {
@@ -104,9 +112,7 @@ body {
     margin-top: 30px;
 }
 
-.litere:hover{
-    background-color: darkcyan;
-}
+
 
 .litUsed {
     font-family:"Arial Black";
