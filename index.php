@@ -35,6 +35,21 @@ print_r($array);
     <div id="used"></div>
 </div>
 <div id="hint"></div>
+
+<div>
+    <audio id="sndCorrect" preload="auto">
+        <source src="audio/goodbell.mp3">
+    </audio>
+    <audio id="sndBad" preload="auto">
+        <source src="audio/bad.mp3">
+    </audio>
+    <audio id="sndWin" preload="auto">
+        <source src="audio/win.mp3">
+    </audio>
+    <audio id="sndLose" preload="auto">
+        <source src="audio/lost.mp3">
+    </audio>
+</div>
 </body>
 <script src="game.js" type="text/javascript"></script>
 </html>
