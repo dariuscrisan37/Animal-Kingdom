@@ -2,7 +2,8 @@
 div_numeanimal = document.getElementById("nume-animal");
 div_used = document.getElementById('used');
 div_litere = document.getElementById("litere");
-var numStrikes = 0;
+//viata cu care incepe jocul
+var numStrikes = 6;
 var numeanimal = document.querySelector('#nume-animal').innerHTML;
 
 document.querySelector('#nume-animal').innerHTML = '';
@@ -74,8 +75,11 @@ function selectLitera(selected){
     }else{
         document.getElementById('sndBad').currentTime = 0;
         document.getElementById('sndBad').play();
-        numStrikes++;
-        if(numStrikes == 6){
+
+        // Daca litera apasata nu exista, ar tb sa scada din viata.
+        numStrikes--;
+        if(numStrikes == 0){
+            // cand ramane fara viata;
             alert('Ai pierdut. Raspunsul corect a fost: ' + numeanimal);
             lose = true;
         }
