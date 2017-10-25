@@ -87,7 +87,8 @@ mysqli_close($conn);
                 <td><label class="control-label">Imagine </label></td>
                 <td>
                     <p><img src='get-image.php?id=<?php echo $id ?>' height="150" width="150" /></p>
-                    <input class="input-group" type="file" name="user_image" accept="image/*" />
+                    <input class="input-group" type="file" name="user_image" accept="image/*" onchange="previewFile()"/>
+
                 </td>
             </tr>
 
@@ -104,6 +105,21 @@ mysqli_close($conn);
         </table>
 
     </form>
+    <script>
+        function previewFile() {
+            var preview = document.querySelector('img');
+            var file    = document.querySelector('input[type=file]').files[0];
+            var reader  = new FileReader();
+
+            reader.addEventListener("load", function () {
+                preview.src = reader.result;
+            }, false);
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 </body>
 
 </html>
