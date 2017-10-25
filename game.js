@@ -50,7 +50,7 @@ function selectLitera(selected){
     for(var i=0; i<numeanimal.length; i++){
         if (numeanimal[i] == letter) document.getElementById('letter_' + i).innerHTML = letter;
     }
-    var lose;
+
     var win;
     var current = '';
     var correct = false;
@@ -81,15 +81,13 @@ function selectLitera(selected){
         if(numStrikes == 0){
             // cand ramane fara viata;
             alert('Ai pierdut. Raspunsul corect a fost: ' + numeanimal);
-            lose = true;
+            document.getElementById('sndLose').currentTime = 0;
+            document.getElementById('sndLose').play();
         }
     }
     if(win){
         document.getElementById('sndWin').currentTime = 0;
         document.getElementById('sndWin').play();
-    }else if(lose){
-        document.getElementById('sndLose').currentTime = 0;
-        document.getElementById('sndLose').play();
     }
 }
 // selectLitera(selected);

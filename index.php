@@ -13,6 +13,7 @@ print_r($array);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <div id="energy-view">energy</div>
 <div id="energy"></div>
 <div id="exit-button">
@@ -22,15 +23,15 @@ print_r($array);
 <!--image from database-->
     <?php
     echo "<img src=\"get-image.php?id='$random'\">"
-
-
 ?>
 </div>
-<div id="nume-animal" ><?php
-    echo $nume;
-    ?>
-</div>
+
+
 <div id="panouLitere">
+    <div id="nume-animal" ><?php
+        echo $nume;
+        ?>
+    </div>
     <div id="litere"></div>
     <div id="used"></div>
 </div>
@@ -46,9 +47,12 @@ print_r($array);
     <audio id="sndWin" preload="auto">
         <source src="audio/win.mp3">
     </audio>
-    <audio id="sndLose" preload="auto">
+    <audio id="sndLose" preload="none">
         <source src="audio/lost.mp3">
     </audio>
+</div>
+<div class="overlay">
+    <div class="text"></div>
 </div>
 </body>
 <script src="game.js" type="text/javascript"></script>
