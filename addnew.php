@@ -2,7 +2,7 @@
 
 include "db-connect.php";
 //$conn = mysqli_connect('localhost', 'root', '', 'animals');
-$MAX_FILE_SIZE = 5000000;
+$MAX_FILE_SIZE = 1048576;
 if(isset($_POST['btnsave'])) {
     $nume = $_POST['nume_animal'];
     $imgName = $_FILES['poza']['name'];
@@ -32,16 +32,17 @@ if(isset($_POST['btnsave'])) {
         }
 
     }
-    $sql = "INSERT INTO animals(word, animals) VALUE ('$nume', '$imgFile')";
-    if (mysqli_query($conn, $sql)) {
-        $successMSG = "a fost adaugat cu success...";
-        header("refresh:5, database.php"); //redirect page after 5 seconds.
-    } else {
-        echo $errMSG = "eroare la incarcarea imaginii " . $sql . "<br>" . mysqli_error($conn);
+    if (!isset($errMSG)){
+        $sql = "INSERT INTO animals(word, animals) VALUE ('$nume', '$imgFile')";
+        if (mysqli_query($conn, $sql)) {
+            $successMSG = "a fost adaugat cu success...";
+            header("refresh:5, database.php"); //redirect page after 5 seconds.
+        } else {
+            echo $errMSG = "eroare la incarcarea imaginii " . $sql . "<br>" . mysqli_error($conn);
+        }
+        mysqli_close($conn);
+        // if no error occured, continue ....
     }
-    mysqli_close($conn);
-    // if no error occured, continue ....
-
 }
 
 ?>
