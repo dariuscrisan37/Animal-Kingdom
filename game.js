@@ -9,11 +9,12 @@ var numeanimal = document.querySelector('#nume-animal').innerHTML;
 document.querySelector('#nume-animal').innerHTML = '';
 var length = numeanimal.length;
 
+div_numeanimal.innerHTML= '';
 for (var i = 0; i < length; i++) {
     var box = document.createElement('div');
     box.id = 'letter_' + i;
 
-    if(numeanimal[i]==' ') div_numeanimal.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;';
+    if(numeanimal[i]==' ') box.className += 'emptyBox';
     else box.className += 'box letter';
 
     // box.innerHTML = numeanimal[i];

@@ -78,6 +78,7 @@ body {
     border: black 2px solid;
     box-shadow: 2px 2px 3px gray;
     position: relative;
+
 }
 
 .letter{
@@ -139,3 +140,26 @@ body {
     border: solid 2px black;
     box-shadow: 2px 2px 3px gray;
 }
+
+.emptyBox{
+    clear: inherit;
+    font-family:"Arial Black";
+    font-weight: bold;
+    text-align: center;
+    float: left;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    margin: 3px;
+    color: #B5C68E;
+    background-color: #B5C68E;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: #B5C68E;
+    box-shadow: #B5C68E;
+    position: relative;
+}
+

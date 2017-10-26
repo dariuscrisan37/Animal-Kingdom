@@ -25,13 +25,13 @@ print_r($array);
     echo "<img src=\"get-image.php?id='$random'\">"
 ?>
 </div>
-
+<div id="nume-animal" ><?php
+    echo $nume;
+    ?>
+</div>
 
 <div id="panouLitere">
-    <div id="nume-animal" ><?php
-        echo $nume;
-        ?>
-    </div>
+
     <div id="litere"></div>
     <div id="used"></div>
 </div>
