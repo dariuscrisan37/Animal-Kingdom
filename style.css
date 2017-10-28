@@ -15,11 +15,14 @@ body {
 #energy {
     background-color: white;
     float: left;
-    border: 3px solid gray;
     width: 60px;
     height: 30px;
     margin: 5px 5px 5px 10px;
-    border-radius: 7px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: solid 2px black;
+    box-shadow: 2px 2px 3px gray;
 }
 
 #exit-button {
@@ -163,7 +166,7 @@ body {
     position: relative;
 }
 .health{
-    background-color: olivedrab;
+    background-color: olive;
     width: 10px;
     height: 30px;
     float: left;
@@ -172,7 +175,7 @@ body {
 .emptyv{
     background-color: white;
     width: 10px;
-    height: 30px;
+    height: 29px;
     float: left;
 }
 

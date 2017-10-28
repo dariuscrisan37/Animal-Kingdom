@@ -23,7 +23,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'animals');
 <a href="index.php"><IMG SRC="img/logo.png" HEIGHT="120" WIDTH="120" BORDER="0" style="clear: both; float: left"></a>
 <div class="container">
     <div class="header">
-        <h1 class="h1">Toate animalele  <a class="btn btn-default" href="addnew.php">
+        <h1 class="h1">Toate animalele       <a class="btn btn-default" href="addnew.php">
                 <span class="glyphicon glyphicon-plus"></span>&nbsp; Adauga </a></h1>
 
     </div>
