@@ -93,18 +93,10 @@ function selectLitera(selected){
         // Daca litera apasata nu exista, ar tb sa scada din viata.
         numStrikes--;
         console.log(numStrikes);
-        if (numStrikes > 4){
+        if (numStrikes != 0) {
             document.getElementById("viata_" + numStrikes).className = "emptyv";
         }
-        else if (numStrikes > 2){
-            document.getElementsByClassName("health").className = "yellow";
-            document.getElementById("viata_" + numStrikes).className = "emptyv";
-        }
-        else if (numStrikes!=0){
-            document.getElementsByClassName("health").style.backgroundColor = "red";
-            document.getElementById("viata_" + numStrikes).className = "emptyv";
-        }
-        else if(numStrikes == 0){
+        else {
             // cand ramane fara viata;
             document.getElementById("viata_" + numStrikes).className = "emptyv";
             alert('Ai pierdut. Raspunsul corect a fost: ' + numeanimal);

@@ -36,7 +36,7 @@ print_r($array);
     <div id="used"></div>
 </div>
 <div id="hint"></div>
-
+<script src="game.js" type="text/javascript"></script>
 <div>
     <audio id="sndCorrect" preload="auto">
         <source src="audio/goodbell.mp3">
@@ -54,6 +54,7 @@ print_r($array);
 <div class="overlay">
     <div class="text"></div>
 </div>
+
 </body>
-<script src="game.js" type="text/javascript"></script>
+
 </html>
