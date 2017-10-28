@@ -54,7 +54,7 @@ print_r($array);
 <div class="overlay">
     <div class="text"></div>
 </div>
-
+<a href="database.php"><img src="img/logo.png"></a>
 </body>
 
 </html>

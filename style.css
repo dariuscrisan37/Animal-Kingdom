@@ -163,7 +163,7 @@ body {
     position: relative;
 }
 .health{
-    background-color: darkgreen;
+    background-color: olivedrab;
     width: 10px;
     height: 30px;
     float: left;
@@ -179,4 +179,12 @@ body {
 #nume-animal{
     color: #B5C68E;
     background-color: #B5C68E;
+}
+
+a {
+    float: right;
+    padding-right: 10px;
+    padding-top: 450px;
+    color: white;
+
 }
