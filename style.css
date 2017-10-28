@@ -162,4 +162,30 @@ body {
     box-shadow: #B5C68E;
     position: relative;
 }
+.health{
+    background-color: darkgreen;
+    width: 10px;
+    height: 30px;
+    float: left;
+}
 
+.emptyv{
+    background-color: white;
+    width: 10px;
+    height: 30px;
+    float: left;
+}
+
+.yellow{
+    background-color: yellow;
+    width: 10px;
+    height: 30px;
+    float: left;
+}
+
+.red{
+    background-color: red;
+    width: 10px;
+    height: 30px;
+    float: left;
+}
