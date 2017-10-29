@@ -20,7 +20,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'animals');
     <link rel=stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 </head>
 <body style="background: #B5C68E">
-<a href="index.php"><IMG SRC="img/logo.png" HEIGHT="120" WIDTH="120" BORDER="0" style="clear: both; float: left"></a>
+<a href="index.php"><IMG SRC="img/logo.png" HEIGHT="120" WIDTH="120" BORDER="0" style="clear: both; float: right; margin-right: 20%"></a>
 <div class="container">
     <div class="header">
         <h1 class="h1">Toate animalele       <a class="btn btn-default" href="addnew.php">

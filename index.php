@@ -12,13 +12,11 @@ print_r($array);
     <title>Animal Kingdom</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
 <div id="energy-view">energy</div>
 <div id="energy"></div>
-<div id="exit-button">
+<a href="#"><div id="exit-button">
     <div id="child">X</div>
-</div>
+    </div></a>
 <div id="poza-animal" >
 <!--image from database-->
     <?php
@@ -36,7 +34,7 @@ print_r($array);
     <div id="used"></div>
 </div>
 <div id="hint"></div>
-<script src="game.js" type="text/javascript"></script>
+
 <div>
     <audio id="sndCorrect" preload="auto">
         <source src="audio/goodbell.mp3">
@@ -51,10 +49,16 @@ print_r($array);
         <source src="audio/lost.mp3">
     </audio>
 </div>
-<div class="overlay">
-    <div class="text"></div>
+<div id="myNav" class="overlay">
+    <div class="overlay-content">
+        <div id="mesaj"></div>
+        <a href="index.php">Play Again</a>
+    </div>
+
 </div>
-<a href="database.php"><img src="img/logo.png"></a>
+<a id="img" href="database.php"><img src="img/logo.png"></a>
+
+<script src="game.js" type="text/javascript"></script>
 </body>
 
 </html>

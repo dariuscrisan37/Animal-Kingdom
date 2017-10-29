@@ -5,9 +5,19 @@ div_litere = document.getElementById("litere");
 div_energy = document.getElementById('energy');
 
 
+
 //viata cu care incepe jocul
 var numStrikes = 6;
 var numeanimal = document.querySelector('#nume-animal').innerHTML;
+var tries = 0;
+function victory() {
+    document.getElementById("myNav").style.width = "100%";
+    document.getElementById("mesaj").innerHTML = "Ai castigat!! Felicitari, ai ghicit cuvantul din "+ tries + " incercari!";
+}
+function lose() {
+    document.getElementById("myNav").style.width = "100%";
+    document.getElementById("mesaj").innerHTML = "Ai ramas fara viata";
+}
 
 document.querySelector('#nume-animal').innerHTML = '';
 var length = numeanimal.length;
@@ -25,6 +35,7 @@ for (var i = 0; i < length; i++) {
     div_numeanimal.appendChild(box);
 
 }
+
 //VIATA
 for ( i=0; i < numStrikes; i++ ){
     var health = document.createElement('div');
@@ -55,7 +66,7 @@ function selectLitera(selected){
     lit.innerHTML = selected.innerHTML;
     lit.className = 'litUsed';
     div_used.appendChild(lit);
-
+    tries++;
 
     var letter = selected.innerHTML;
     for(i=0; i<numeanimal.length; i++){
@@ -72,13 +83,14 @@ function selectLitera(selected){
         if(numeanimal[i] == letter){
             document.getElementById('letter_' + i).innerHTML = letter;
             correct = true;
+
         }
 
         if(document.getElementById('letter_' + i).innerHTML == '') current += ' ';
         else current += document.getElementById('letter_' +i).innerHTML;
     }
     if(current == numeanimal){
-        alert('Ai castigat');
+        victory();
         win = true;
     }
     if(correct){
@@ -98,15 +110,19 @@ function selectLitera(selected){
         }
         else {
             // cand ramane fara viata;
+
             document.getElementById("viata_" + numStrikes).className = "emptyv";
-            alert('Ai pierdut. Raspunsul corect a fost: ' + numeanimal);
+            lose();
             document.getElementById('sndLose').currentTime = 0;
             document.getElementById('sndLose').play();
+
         }
     }
     if(win){
+
         document.getElementById('sndWin').currentTime = 0;
         document.getElementById('sndWin').play();
+
     }
 
 }
@@ -114,6 +130,4 @@ function selectLitera(selected){
 // selectLitera(selected);
 
 console.log(numStrikes);
-
-
 

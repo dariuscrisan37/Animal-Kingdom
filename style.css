@@ -21,7 +21,7 @@ body {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    border: solid 2px black;
+    border: solid 3px black;
     box-shadow: 2px 2px 3px gray;
 }
 
@@ -113,10 +113,11 @@ body {
 }
 
 #panouLitere {
-    align: center;
+
     margin: 80px 50px 50px 50px;
     max-width: 450px;
     float: left;
+    clear: right;
 
 }
 #used {
@@ -166,16 +167,16 @@ body {
     position: relative;
 }
 .health{
-    background-color: olive;
+    background-color: greenyellow;
     width: 10px;
     height: 30px;
     float: left;
 }
 
 .emptyv{
-    background-color: white;
+    background-color: whitesmoke;
     width: 10px;
-    height: 29px;
+    height: 30px;
     float: left;
 }
 
@@ -184,10 +185,62 @@ body {
     background-color: #B5C68E;
 }
 
-a {
-    float: right;
-    padding-right: 10px;
-    padding-top: 450px;
+#img {
+    float: left;
+    margin: auto 40%;
+    clear: both;
+    align: center;
+
+}
+
+
+
+
+
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay #mesaj{
+    font-family: red-serifs;
+    font-size: 40px;
     color: white;
 
 }
+
