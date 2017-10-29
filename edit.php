@@ -27,7 +27,7 @@ if(isset($_POST['btn_save_updates'])) {
 
     if (mysqli_query($conn, $sql)) {
 
-        header("refresh:2 ,url=database.php");
+        header("refresh:0.5 ,url=database.php");
     } else {
         echo $errMSG = "eroare la incarcarea imaginii " . $sql . "<br>" . mysqli_error($conn);
     }
