@@ -234,13 +234,13 @@ body {
 
 /* When you mouse over the navigation links, change their color */
 .overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
+    color: yellowgreen;
 }
 
 .overlay #mesaj{
     font-family: red-serifs;
-    font-size: 40px;
-    color: white;
+    font-size: 30px;
+    color: Yellowgreen;
 
 }
 

@@ -12,11 +12,12 @@ var numeanimal = document.querySelector('#nume-animal').innerHTML;
 var tries = 0;
 function victory() {
     document.getElementById("myNav").style.width = "100%";
-    document.getElementById("mesaj").innerHTML = "Ai castigat!! Felicitari, ai ghicit cuvantul din "+ tries + " incercari!";
+    document.getElementById("mesaj").innerHTML = "<h1>Ai castigat!!</h1><br /> Felicitari, ai ghicit cuvantul din "+ tries + " incercari!";
 }
 function lose() {
     document.getElementById("myNav").style.width = "100%";
-    document.getElementById("mesaj").innerHTML = "Ai ramas fara viata";
+    document.getElementById("mesaj").style.color = "red";
+    document.getElementById("mesaj").innerHTML = "<h1>Ai pierdut!!</h1><br /> Ai ramas fara viata.";
 }
 
 document.querySelector('#nume-animal').innerHTML = '';
