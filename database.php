@@ -32,7 +32,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'animals');
 
 <div class="row">
     <?php
-    $sql = "SELECT * FROM animals";
+    $sql = "SELECT * FROM animals ORDER BY word";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {

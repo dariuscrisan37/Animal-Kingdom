@@ -1,7 +1,6 @@
 <?php
 
 include "db-connect.php";
-
     $id = $_GET['id'];
     $sql = "SELECT * FROM animals WHERE id=$id";
     $select = mysqli_query($conn, $sql);
@@ -25,14 +24,15 @@ if(isset($_POST['btn_save_updates'])) {
     }
 
     if (empty($name)) {
-    // Verifing the name filed
-    $errMSG = "Va rog adaugati numele animalului";
+        // Verifing the name filed
+        $errMSG = "Va rog adaugati numele animalului";
     } // Verifing the file field
     else if (empty($imgName)) {
         $errMSG = "Va rog adaugati imaginea";
     }
 
-    if(!$errMSG){
+
+    if (!isset($errMSG)) {
         $sql = "UPDATE animals SET animals='$imgFile',word='$name' WHERE id=$id";
 
         if (mysqli_query($conn, $sql)) {

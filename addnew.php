@@ -36,7 +36,7 @@ if(isset($_POST['btnsave'])) {
         $sql = "INSERT INTO animals(word, animals) VALUE ('$nume', '$imgFile')";
         if (mysqli_query($conn, $sql)) {
             $successMSG = "a fost adaugat cu success...";
-            header("refresh:5, database.php"); //redirect page after 5 seconds.
+            header("refresh:0.5, database.php"); //redirect page after 5 seconds.
         } else {
             echo $errMSG = "eroare la incarcarea imaginii " . $sql . "<br>" . mysqli_error($conn);
         }
