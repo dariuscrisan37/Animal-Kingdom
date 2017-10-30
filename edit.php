@@ -23,15 +23,25 @@ if(isset($_POST['btn_save_updates'])) {
 
 
     }
-    $sql = "UPDATE animals SET animals='$imgFile',word='$name' WHERE id=$id";
 
-    if (mysqli_query($conn, $sql)) {
-
-        header("refresh:0.5 ,url=database.php");
-    } else {
-        echo $errMSG = "eroare la incarcarea imaginii " . $sql . "<br>" . mysqli_error($conn);
+    if (empty($name)) {
+    // Verifing the name filed
+    $errMSG = "Va rog adaugati numele animalului";
+    } // Verifing the file field
+    else if (empty($imgName)) {
+        $errMSG = "Va rog adaugati imaginea";
     }
 
+    if(!$errMSG){
+        $sql = "UPDATE animals SET animals='$imgFile',word='$name' WHERE id=$id";
+
+        if (mysqli_query($conn, $sql)) {
+
+            header("refresh:0.5 ,url=database.php");
+        } else {
+            echo $errMSG = "eroare la incarcarea imaginii " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
 }
 mysqli_close($conn);
 ?>
