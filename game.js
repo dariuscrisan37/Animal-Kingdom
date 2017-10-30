@@ -17,7 +17,7 @@ function victory() {
 function lose() {
     document.getElementById("myNav").style.width = "100%";
     document.getElementById("mesaj").style.color = "red";
-    document.getElementById("mesaj").innerHTML = "<h1>Ai pierdut!!</h1><br /> Ai ramas fara viata.";
+    document.getElementById("mesaj").innerHTML = "<h1>Ai pierdut!!</h1><br /> Ai ramas fara energie.";
 }
 
 document.querySelector('#nume-animal').innerHTML = '';
