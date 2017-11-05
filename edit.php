@@ -6,9 +6,15 @@ include "db-connect.php";
     $select = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($select);
     $name = $row['word'];
+
 if(isset($_POST['btn_save_updates'])) {
     $name = $_POST['word'];
-    $imgFile = addslashes(file_get_contents($_FILES["user_image"]["tmp_name"]));
+    $photo = $_FILES["user_image"]["tmp_name"];
+
+    if(!empty($photo) && file_exists($photo)) {
+        $imgFile = addslashes(file_get_contents($photo));
+    }
+
     $imgName = $_FILES["user_image"]['name'];
     $imgSize = $_FILES["user_image"]['size'];
     $name = strtoupper($name);
@@ -19,8 +25,6 @@ if(isset($_POST['btn_save_updates'])) {
         ) {
             $errMSG = "Format necunoscut, alegeti alta imagine";
         }
-
-
     }
 
     if (empty($name)) {
@@ -96,7 +100,7 @@ mysqli_close($conn);
             <tr>
                 <td><label class="control-label">Imagine </label></td>
                 <td>
-                    <p><img src='get-image.php?id=<?php echo $id ?>' height="150" width="150" /></p>
+                    <p><img src='get-image.php?id=<?php echo $id ?>' style="display: none" height="150" width="150" /></p>
                     <input class="input-group" type="file" name="user_image" accept="image/*" onchange="previewFile()"/>
 
                 </td>
@@ -122,6 +126,10 @@ mysqli_close($conn);
             var reader  = new FileReader();
 
             reader.addEventListener("load", function () {
+                if (document.getElementsByClassName('alert-danger')[0]) {
+                    document.getElementsByClassName('alert-danger')[0].style.display = 'none';
+                }
+                preview.style.display = 'block';
                 preview.src = reader.result;
             }, false);
 
