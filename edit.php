@@ -59,7 +59,7 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" >
     <title>Customize</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel=stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
@@ -73,7 +73,7 @@ mysqli_close($conn);
         <h1 class="h2">Edit <a class="btn btn-default" href="database.php"> Toate Animalele </a></h1>
     </div>
 
-    <div class="clearfix"></div>
+    <div class="clearfix" ></div>
 
     <form method="post" enctype="multipart/form-data" class="form-horizontal">
 
