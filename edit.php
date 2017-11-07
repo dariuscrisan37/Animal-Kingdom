@@ -32,20 +32,31 @@ if(isset($_POST['btn_save_updates'])) {
         $errMSG = "Va rog adaugati numele animalului";
     } // Verifing the file field
     else if (empty($imgName)) {
-        $errMSG = "Va rog adaugati imaginea";
-    }
+        // update onlu name
+        if (!isset($errMSG)) {
+            $sql = "UPDATE animals SET word='$name' WHERE id=$id";
 
+            if (mysqli_query($conn, $sql)) {
 
-    if (!isset($errMSG)) {
-        $sql = "UPDATE animals SET animals='$imgFile',word='$name' WHERE id=$id";
+                header("refresh:0.5 ,url=database.php");
+            } else {
+                echo $errMSG = "eroare la incarcarea imaginii " . $sql . "<br>" . mysqli_error($conn);
+            }
+        }
+    } else {
+        if (!isset($errMSG)) {
+            $sql = "UPDATE animals SET animals='$imgFile',word='$name' WHERE id=$id";
 
-        if (mysqli_query($conn, $sql)) {
+            if (mysqli_query($conn, $sql)) {
 
-            header("refresh:0.5 ,url=database.php");
-        } else {
-            echo $errMSG = "eroare la incarcarea imaginii " . $sql . "<br>" . mysqli_error($conn);
+                header("refresh:0.5 ,url=database.php");
+            } else {
+                echo $errMSG = "eroare la incarcarea imaginii " . $sql . "<br>" . mysqli_error($conn);
+            }
         }
     }
+
+
 }
 mysqli_close($conn);
 ?>
@@ -100,7 +111,7 @@ mysqli_close($conn);
             <tr>
                 <td><label class="control-label">Imagine </label></td>
                 <td>
-                    <p><img src='get-image.php?id=<?php echo $id ?>' style="display: none" height="150" width="150" /></p>
+                    <p><img src='get-image.php?id=<?php echo $id ?>' height="150" width="150" /></p>
                     <input class="input-group" type="file" name="user_image" accept="image/*" onchange="previewFile()"/>
 
                 </td>
@@ -126,10 +137,7 @@ mysqli_close($conn);
             var reader  = new FileReader();
 
             reader.addEventListener("load", function () {
-                if (document.getElementsByClassName('alert-danger')[0]) {
-                    document.getElementsByClassName('alert-danger')[0].style.display = 'none';
-                }
-                preview.style.display = 'block';
+
                 preview.src = reader.result;
             }, false);
 
